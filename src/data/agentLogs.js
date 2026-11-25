@@ -1,0 +1,9 @@
+export const agentStages = [
+  { name:"Citizen Complaint", agent:"Intake Gateway", status:"Completed", time:"09:40:02", duration:"0.4s", confidence:100, input:"Citizen text in Marathi", output:"Complaint payload received", reason:"Source accepted and preserved as submitted." },
+  { name:"Intake Agent", agent:"Resolve Intake v2", status:"Completed", time:"09:40:04", duration:"1.8s", confidence:94, input:"Raw complaint text", output:"Category, location and urgency draft", reason:"Category and location extracted with high confidence." },
+  { name:"Vector RAG Retrieval", agent:"Historical Case Retrieval", status:"Completed", time:"09:40:05", duration:"2.1s", confidence:91, input:"Structured grievance embedding", output:"5 similar historical cases", reason:"Relevant district cases returned for comparison." },
+  { name:"Duplicate Detection", agent:"Similarity Agent", status:"Completed", time:"09:40:08", duration:"1.2s", confidence:96, input:"Location, category, time window", output:"Matched duplicate group DG-208", reason:"Strong location and category overlap detected." },
+  { name:"Policy Agent", agent:"Category Master Policy", status:"Completed", time:"09:40:10", duration:"0.8s", confidence:99, input:"Category and sensitivity flags", output:"Water Supply routing policy", reason:"Routing policy matches the configured category master." },
+  { name:"Decision Engine", agent:"Resolution Orchestrator", status:"Action Required", time:"09:40:12", duration:"1.5s", confidence:88, input:"Agent outputs and SLA risk", output:"Route to Water Supply", reason:"Assignment approved; no legal liability decision made." },
+  { name:"Action Agent", agent:"Department Notification", status:"Running", time:"09:40:14", duration:"—", confidence:90, input:"Approved department assignment", output:"Preparing officer notification", reason:"Human confirmation retained for sensitive routing." }
+];
